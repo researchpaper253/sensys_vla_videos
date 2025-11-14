@@ -208,94 +208,151 @@
         </p>
 
         <div class="grid">
-          <!-- Example 1 -->
           <figure class="clip">
-            <!-- TODO: replace with your real GIF path -->
             <img
-              src="gifs/real__clean-dish__pi0__pregrasp-xy__v1.gif"
-              alt="Clean Dish task where pi0 narrowly misses the sponge due to XY misalignment."
+              loading="lazy"
+              src="gifs/real/clean_dish_mis_grasp_release.gif"
+              alt="Clean Dish clip showing the sponge slipping away before it can be deposited in the pot."
             />
             <figcaption>
-              <div class="clip-title">Clean Dish – &pi;<sub>0</sub> near-miss grasp</div>
+              <div class="clip-title">Clean Dish – mis-grasp and premature release</div>
               <div class="clip-meta">
-                Task: Clean Dish · Model: &pi;<sub>0</sub> · Failure: Pre-grasp / Grasp
+                Setting: Real robot · Task: Clean Dish · Failure: Pre-grasp + Release
               </div>
               <p class="clip-desc">
-                Sub-centimeter XY offsets lead to air grasps on the sponge, despite
-                correct language grounding of the instruction.
+                A slight offset causes the sponge to wobble in the gripper and fall
+                before the pot is reached, highlighting how compounding small pose
+                errors doom long-horizon interactions.
               </p>
             </figcaption>
           </figure>
 
-          <!-- Example 2 -->
           <figure class="clip">
             <img
-              src="gifs/real__clean-dish__openvla-oft__release-early__v1.gif"
-              alt="Clean Dish trial where the sponge drops on the pot rim due to early release."
+              loading="lazy"
+              src="gifs/real/accident_release_pot.gif"
+              alt="Put Sponge into Pot clip where the grasped sponge is dropped against the rim."
             />
             <figcaption>
-              <div class="clip-title">Clean Dish – OpenVLA–OFT premature release</div>
+              <div class="clip-title">Put Sponge into Pot – accidental rim release</div>
               <div class="clip-meta">
-                Task: Clean Dish · Model: OpenVLA–OFT · Failure: Release / Placement
+                Setting: Real robot · Task: Put Sponge into Pot · Failure: Release / Placement
               </div>
               <p class="clip-desc">
-                The sponge is grasped successfully but released before it is fully
-                inside the pot, causing unstable placement on the rim.
+                The controller reaches the pot but opens slightly early, causing the
+                sponge to catch the rim and tumble out before landing inside.
               </p>
             </figcaption>
           </figure>
 
-          <!-- Example 3 -->
           <figure class="clip">
             <img
+              loading="lazy"
               src="gifs/real/misgrasp_pot_1.gif"
-              alt="Put Sponge into Pot trial showing ACT trajectory drifting into the pot wall."
+              alt="Put Sponge into Pot clip where the gripper repeatedly clips the pot wall."
             />
             <figcaption>
-              <div class="clip-title">Put Sponge into Pot – ACT trajectory drift</div>
+              <div class="clip-title">Put Sponge into Pot – repeated wall collisions</div>
               <div class="clip-meta">
-                Task: Put Sponge into Pot · Model: ACT · Failure: Trajectory drift
+                Setting: Real robot · Task: Put Sponge into Pot · Failure: Trajectory drift
               </div>
               <p class="clip-desc">
-                Over a long horizon, accumulated pose error and partial occlusion
-                cause the trajectory to drift and repeatedly collide with the pot.
+                Small pose drift accumulates until the end-effector drags along the
+                pot wall instead of approaching over the opening, preventing a clean
+                insertion.
               </p>
             </figcaption>
           </figure>
 
-          <!-- Example 4 -->
           <figure class="clip">
             <img
-              src="gifs/real__unzip-bag__pi0__pregrasp-xy__v1.gif"
-              alt="Unzip Bag trial where the gripper closes on fabric instead of the zipper tab."
+              loading="lazy"
+              src="gifs/real/misgrasp_pot_2.gif"
+              alt="Put Sponge into Pot clip where the gripper closes on air next to the sponge."
             />
             <figcaption>
-              <div class="clip-title">Unzip Bag – &pi;<sub>0</sub> zipper mis-grasp</div>
+              <div class="clip-title">Put Sponge into Pot – air grasp near the sponge</div>
               <div class="clip-meta">
-                Task: Unzip Bag · Model: &pi;<sub>0</sub> · Failure: Pre-grasp / Grasp
+                Setting: Real robot · Task: Put Sponge into Pot · Failure: Pre-grasp / Grasp
               </div>
               <p class="clip-desc">
-                The gripper approaches close to the zipper tab but closes on the
-                surrounding fabric, illustrating the difficulty of fine-feature
-                alignment.
+                The gripper follows the right macro motion but closes a few
+                centimeters away from the sponge, showcasing inconsistent contact
+                reasoning under occlusion.
               </p>
             </figcaption>
           </figure>
 
-          <!-- Example 5 -->
           <figure class="clip">
             <img
-              src="gifs/real__fold-shorts__openvla-oft__release-misaligned__v1.gif"
-              alt="Folding Shorts trial where the second fold collapses due to misaligned release."
+              loading="lazy"
+              src="gifs/real/misgrasp_zipper.gif"
+              alt="Unzip Bag clip where the gripper closes on fabric instead of the zipper tab."
             />
             <figcaption>
-              <div class="clip-title">Folding Shorts – OpenVLA–OFT release timing</div>
+              <div class="clip-title">Unzip Bag – zipper tab miss</div>
               <div class="clip-meta">
-                Task: Folding Shorts · Model: OpenVLA–OFT · Failure: Release / Placement
+                Setting: Real robot · Task: Unzip Bag · Failure: Fine-feature grasp
               </div>
               <p class="clip-desc">
-                During the second fold, the gripper releases at a skewed pose,
-                causing the waistband to slip and the folded state to collapse.
+                Despite approaching the zipper head, the fingers pinch nearby fabric
+                and fail to latch onto the metal pull, so the zipper never actuates.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="clip">
+            <img
+              loading="lazy"
+              src="gifs/real/fold_short_state_drift.gif"
+              alt="Folding Shorts clip where the cloth slowly drifts out of the camera view."
+            />
+            <figcaption>
+              <div class="clip-title">Fold Shorts – state drift mid-task</div>
+              <div class="clip-meta">
+                Setting: Real robot · Task: Fold Shorts · Failure: State tracking / Drift
+              </div>
+              <p class="clip-desc">
+                After the first fold, the cloth shifts relative to the gripper
+                reference, so the next motion misses the target edge and the garment
+                unfolds.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="clip">
+            <img
+              loading="lazy"
+              src="gifs/real/misgrasp_fold_shorts.gif"
+              alt="Folding Shorts clip where the grasp scoops only a corner of the garment."
+            />
+            <figcaption>
+              <div class="clip-title">Fold Shorts – partial grasp on the hem</div>
+              <div class="clip-meta">
+                Setting: Real robot · Task: Fold Shorts · Failure: Pre-grasp / Grasp
+              </div>
+              <p class="clip-desc">
+                Only a small corner is captured, causing the cloth to twist and pull
+                away from the desired fold line when lifted.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="clip">
+            <img
+              loading="lazy"
+              src="gifs/real/Instruction_adherence.gif"
+              alt="Clip where the robot picks the right object but ignores the spoken instruction."
+            />
+            <figcaption>
+              <div class="clip-title">Instruction adherence lapse</div>
+              <div class="clip-meta">
+                Setting: Real robot · Task: Language-guided manipulation · Failure: Instruction adherence
+              </div>
+              <p class="clip-desc">
+                The policy grounds the scene but executes a default clean-up motion
+                instead of the specified command, underscoring alignment gaps between
+                language and action.
               </p>
             </figcaption>
           </figure>
@@ -310,56 +367,57 @@
         </p>
 
         <div class="grid">
-          <!-- Sim 1 -->
           <figure class="clip">
             <img
-              src="gifs/sim__pick-blue__openvla-oft__pregrasp-xy__v1.gif"
-              alt="Simulated pick up blue cube trial where OpenVLA misses the cube in XY."
+              loading="lazy"
+              src="gifs/sim/openvla_misgrap_red_cube.gif"
+              alt="Simulation clip where the gripper keeps closing beside the red cube."
             />
             <figcaption>
-              <div class="clip-title">Pick Blue Cube – OpenVLA–OFT planar mis-grasp</div>
+              <div class="clip-title">Pick Red Cube – planar mis-grasp</div>
               <div class="clip-meta">
-                Setting: Simulation · Model: OpenVLA–OFT · Failure: Pre-grasp / Grasp
+                Setting: Simulation · Task: Pick Red Cube · Failure: Pre-grasp / Grasp
               </div>
               <p class="clip-desc">
-                The end-effector repeatedly closes beside the target cube due to
-                planar XY offsets, consistent with the reported 0% success rate.
+                The wrist follows the right macro trajectory but never centers over
+                the cube, so every attempt ends with an air grasp just a few
+                millimeters away.
               </p>
             </figcaption>
           </figure>
 
-          <!-- Sim 2 -->
           <figure class="clip">
             <img
-              src="gifs/sim__pick-green__pi0__pregrasp-yawpitch__v1.gif"
-              alt="Simulated pick up green cube trial where pi0 pushes the cube instead of pinching."
+              loading="lazy"
+              src="gifs/sim/sim_push_instead_pick.gif"
+              alt="Simulation clip where the end-effector pushes the cube across the table."
             />
             <figcaption>
-              <div class="clip-title">Pick Green Cube – &pi;<sub>0</sub> orientation error</div>
+              <div class="clip-title">Pick Blue Cube – push instead of pinch</div>
               <div class="clip-meta">
-                Setting: Simulation · Model: &pi;<sub>0</sub> · Failure: Pre-grasp / Grasp
+                Setting: Simulation · Task: Pick Blue Cube · Failure: Contact mode error
               </div>
               <p class="clip-desc">
-                A small yaw/pitch error leads to tangential contact that pushes the
-                cube away rather than forming a stable pinch grasp.
+                The approach yaw is misaligned, so the gripper nudges the cube rather
+                than settling above it, pushing it farther away on every attempt.
               </p>
             </figcaption>
           </figure>
 
-          <!-- Sim 3 -->
           <figure class="clip">
             <img
-              src="gifs/sim__stack-blue-green__pi0__release-misaligned__v1.gif"
-              alt="Simulated stack blue on green cube trial where the top cube slides off at release."
+              loading="lazy"
+              src="gifs/sim/pi0_stack_blue_on_green.gif"
+              alt="Simulation clip where a blue cube slides off the green base during stacking."
             />
             <figcaption>
-              <div class="clip-title">Stack Blue on Green – &pi;<sub>0</sub> release misalignment</div>
+              <div class="clip-title">Stack Blue on Green – release misalignment</div>
               <div class="clip-meta">
-                Setting: Simulation · Model: &pi;<sub>0</sub> · Failure: Release / Placement
+                Setting: Simulation · Task: Stack Blue on Green · Failure: Release / Placement
               </div>
               <p class="clip-desc">
-                The cube is lifted correctly but released with a slight roll error,
-                causing the stack to slide apart and fail to stabilize.
+                The second cube is transported correctly but released with a slight
+                roll error, so it slides off the target stack and topples.
               </p>
             </figcaption>
           </figure>

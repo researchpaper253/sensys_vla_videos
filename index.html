@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Failure Case GIFs – VLA Models for Robotic Manipulation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Supplementary failure-case GIFs for the paper 'How Aligned Are Vision–Language–Action Models in Robotics? An Empirical Study in Real and Simulated Environments'."
+  />
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --border: #e0e0e5;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --radius-lg: 14px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header.hero {
+      margin-bottom: 32px;
+      padding: 20px 18px 22px;
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .tagline {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: clamp(24px, 3vw, 30px);
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    main {
+      margin-top: 10px;
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    section:first-of-type {
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 17px;
+      margin: 0 0 6px;
+    }
+
+    .section-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    figure.clip {
+      margin: 0;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    figure.clip img {
+      width: 100%;
+      display: block;
+      background: #0f172a;
+    }
+
+    figcaption {
+      padding: 10px 12px 11px;
+      font-size: 13px;
+    }
+
+    .clip-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .clip-meta {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .clip-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .small {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      header.hero {
+        padding: 16px 14px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="tagline">Supplementary Artifact · Failure Case GIFs</div>
+      <h1>Experiences from Benchmarking Vision–Language–Action Models for Robotic Manipulation</h1>
+      <p class="subtitle">
+        This page provides a compact gallery of representative
+        <strong>failure cases</strong> for ACT, OpenVLA–OFT, RDT-1B, and
+        &pi;<sub>0</sub> across real-world ALOHA Mobile experiments and a
+        simple cube-manipulation simulator.
+      </p>
+      <p class="meta">Anonymous submission · SenSys&nbsp;’26 · Please do not share publicly during review.</p>
+    </header>
+
+    <main>
+      <!-- Short overview -->
+      <section id="overview">
+        <h2>Overview</h2>
+        <p class="small">
+          Each GIF corresponds to a single trial from our benchmark and is
+          labeled by <strong>task</strong>, <strong>model</strong>, and
+          <strong>dominant failure category</strong> (e.g., pre-grasp/grasp,
+          release/placement, trajectory drift, instruction adherence). These
+          visual examples complement the quantitative results and taxonomy
+          reported in the paper.
+        </p>
+      </section>
+
+      <!-- Real-world section -->
+      <section id="real">
+        <h2>Real-World Failure Cases (ALOHA Mobile)</h2>
+        <p class="section-note">
+          Four household-inspired tasks under ID / Spatial OOD / Instance+Spatial OOD settings.
+        </p>
+
+        <div class="grid">
+          <!-- Example 1 -->
+          <figure class="clip">
+            <!-- TODO: replace with your real GIF path -->
+            <img
+              src="gifs/real__clean-dish__pi0__pregrasp-xy__v1.gif"
+              alt="Clean Dish task where pi0 narrowly misses the sponge due to XY misalignment."
+            />
+            <figcaption>
+              <div class="clip-title">Clean Dish – &pi;<sub>0</sub> near-miss grasp</div>
+              <div class="clip-meta">
+                Task: Clean Dish · Model: &pi;<sub>0</sub> · Failure: Pre-grasp / Grasp
+              </div>
+              <p class="clip-desc">
+                Sub-centimeter XY offsets lead to air grasps on the sponge, despite
+                correct language grounding of the instruction.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Example 2 -->
+          <figure class="clip">
+            <img
+              src="gifs/real__clean-dish__openvla-oft__release-early__v1.gif"
+              alt="Clean Dish trial where the sponge drops on the pot rim due to early release."
+            />
+            <figcaption>
+              <div class="clip-title">Clean Dish – OpenVLA–OFT premature release</div>
+              <div class="clip-meta">
+                Task: Clean Dish · Model: OpenVLA–OFT · Failure: Release / Placement
+              </div>
+              <p class="clip-desc">
+                The sponge is grasped successfully but released before it is fully
+                inside the pot, causing unstable placement on the rim.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Example 3 -->
+          <figure class="clip">
+            <img
+              src="gifs/real/misgrasp_pot_1.gif"
+              alt="Put Sponge into Pot trial showing ACT trajectory drifting into the pot wall."
+            />
+            <figcaption>
+              <div class="clip-title">Put Sponge into Pot – ACT trajectory drift</div>
+              <div class="clip-meta">
+                Task: Put Sponge into Pot · Model: ACT · Failure: Trajectory drift
+              </div>
+              <p class="clip-desc">
+                Over a long horizon, accumulated pose error and partial occlusion
+                cause the trajectory to drift and repeatedly collide with the pot.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Example 4 -->
+          <figure class="clip">
+            <img
+              src="gifs/real__unzip-bag__pi0__pregrasp-xy__v1.gif"
+              alt="Unzip Bag trial where the gripper closes on fabric instead of the zipper tab."
+            />
+            <figcaption>
+              <div class="clip-title">Unzip Bag – &pi;<sub>0</sub> zipper mis-grasp</div>
+              <div class="clip-meta">
+                Task: Unzip Bag · Model: &pi;<sub>0</sub> · Failure: Pre-grasp / Grasp
+              </div>
+              <p class="clip-desc">
+                The gripper approaches close to the zipper tab but closes on the
+                surrounding fabric, illustrating the difficulty of fine-feature
+                alignment.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Example 5 -->
+          <figure class="clip">
+            <img
+              src="gifs/real__fold-shorts__openvla-oft__release-misaligned__v1.gif"
+              alt="Folding Shorts trial where the second fold collapses due to misaligned release."
+            />
+            <figcaption>
+              <div class="clip-title">Folding Shorts – OpenVLA–OFT release timing</div>
+              <div class="clip-meta">
+                Task: Folding Shorts · Model: OpenVLA–OFT · Failure: Release / Placement
+              </div>
+              <p class="clip-desc">
+                During the second fold, the gripper releases at a skewed pose,
+                causing the waistband to slip and the folded state to collapse.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Simulation section -->
+      <section id="sim">
+        <h2>Simulation Failure Cases (Cube Manipulation)</h2>
+        <p class="section-note">
+          Simple pick-and-place and stacking tasks with colored cubes, evaluated under ID / OOD conditions.
+        </p>
+
+        <div class="grid">
+          <!-- Sim 1 -->
+          <figure class="clip">
+            <img
+              src="gifs/sim__pick-blue__openvla-oft__pregrasp-xy__v1.gif"
+              alt="Simulated pick up blue cube trial where OpenVLA misses the cube in XY."
+            />
+            <figcaption>
+              <div class="clip-title">Pick Blue Cube – OpenVLA–OFT planar mis-grasp</div>
+              <div class="clip-meta">
+                Setting: Simulation · Model: OpenVLA–OFT · Failure: Pre-grasp / Grasp
+              </div>
+              <p class="clip-desc">
+                The end-effector repeatedly closes beside the target cube due to
+                planar XY offsets, consistent with the reported 0% success rate.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Sim 2 -->
+          <figure class="clip">
+            <img
+              src="gifs/sim__pick-green__pi0__pregrasp-yawpitch__v1.gif"
+              alt="Simulated pick up green cube trial where pi0 pushes the cube instead of pinching."
+            />
+            <figcaption>
+              <div class="clip-title">Pick Green Cube – &pi;<sub>0</sub> orientation error</div>
+              <div class="clip-meta">
+                Setting: Simulation · Model: &pi;<sub>0</sub> · Failure: Pre-grasp / Grasp
+              </div>
+              <p class="clip-desc">
+                A small yaw/pitch error leads to tangential contact that pushes the
+                cube away rather than forming a stable pinch grasp.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Sim 3 -->
+          <figure class="clip">
+            <img
+              src="gifs/sim__stack-blue-green__pi0__release-misaligned__v1.gif"
+              alt="Simulated stack blue on green cube trial where the top cube slides off at release."
+            />
+            <figcaption>
+              <div class="clip-title">Stack Blue on Green – &pi;<sub>0</sub> release misalignment</div>
+              <div class="clip-meta">
+                Setting: Simulation · Model: &pi;<sub>0</sub> · Failure: Release / Placement
+              </div>
+              <p class="clip-desc">
+                The cube is lifted correctly but released with a slight roll error,
+                causing the stack to slide apart and fail to stabilize.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- How to interpret / cite -->
+      <section id="usage">
+        <h2>Using and Citing This Artifact</h2>
+        <p class="small">
+          These GIFs are intended as qualitative complements to the figures and
+          tables in the main paper (real-world and simulation results, failure
+          taxonomy, and remedy discussion). If you reference this artifact,
+          please cite the paper:
+        </p>
+        <p class="small">
+          <em>
+            “How Aligned Are Vision–Language–Action Models in Robotics?
+            An Empirical Study in Real and Simulated Environments”, SenSys ’26.
+          </em>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Hosted on GitHub Pages · This page is anonymized for peer review.
+    </footer>
+  </div>
+</body>
+</html>

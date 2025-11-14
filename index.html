@@ -1,450 +1,880 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Failure Case GIFs – VLA Models for Robotic Manipulation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Supplementary failure-case GIFs for the paper 'How Aligned Are Vision–Language–Action Models in Robotics? An Empirical Study in Real and Simulated Environments'."
-  />
-  <style>
-    :root {
-      --bg: #f5f5f7;
-      --card-bg: #ffffff;
-      --border: #e0e0e5;
-      --text: #111827;
-      --muted: #6b7280;
-      --accent: #2563eb;
-      --radius-lg: 14px;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .page {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
-    }
-
-    header.hero {
-      margin-bottom: 32px;
-      padding: 20px 18px 22px;
-      background: #ffffff;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-    }
-
-    .tagline {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    h1 {
-      font-size: clamp(24px, 3vw, 30px);
-      line-height: 1.2;
-      margin: 0 0 8px;
-    }
-
-    .subtitle {
-      max-width: 720px;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.5;
-      margin-bottom: 6px;
-    }
-
-    .meta {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    main {
-      margin-top: 10px;
-    }
-
-    section {
-      margin-top: 28px;
-    }
-
-    section:first-of-type {
-      margin-top: 0;
-    }
-
-    h2 {
-      font-size: 17px;
-      margin: 0 0 6px;
-    }
-
-    .section-note {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-
-    figure.clip {
-      margin: 0;
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    figure.clip img {
-      width: 100%;
-      display: block;
-      background: #0f172a;
-    }
-
-    figcaption {
-      padding: 10px 12px 11px;
-      font-size: 13px;
-    }
-
-    .clip-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .clip-meta {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .clip-desc {
-      font-size: 12px;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .small {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    footer {
-      margin-top: 32px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      header.hero {
-        padding: 16px 14px 18px;
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Experiences from Benchmarking Vision–Language–Action Models for Robotic
+      Manipulation
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Artifact website for “Experiences from Benchmarking Vision–Language–Action Models for Robotic Manipulation”. Browse paper highlights and annotated GIFs of real and simulated failure cases."
+    />
+    <style>
+      :root {
+        --bg: #f5f6fb;
+        --bg-dark: #101628;
+        --card: #ffffff;
+        --border: #e0e4f0;
+        --text: #131722;
+        --muted: #60657a;
+        --accent: #2a5dd8;
+        --accent-strong: #163999;
+        --radius: 18px;
+        --shadow: 0 18px 45px rgba(16, 22, 40, 0.12);
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <header class="hero">
-      <div class="tagline">Supplementary Artifact · Failure Case GIFs</div>
-      <h1>Experiences from Benchmarking Vision–Language–Action Models for Robotic Manipulation</h1>
-      <p class="subtitle">
-        This page provides a compact gallery of representative
-        <strong>failure cases</strong> for ACT, OpenVLA–OFT, RDT-1B, and
-        &pi;<sub>0</sub> across real-world ALOHA Mobile experiments and a
-        simple cube-manipulation simulator.
-      </p>
-      <p class="meta">Anonymous submission · SenSys&nbsp;’26 · Please do not share publicly during review.</p>
-    </header>
 
-    <main>
-      <!-- Short overview -->
-      <section id="overview">
-        <h2>Overview</h2>
-        <p class="small">
-          Each GIF corresponds to a single trial from our benchmark and is
-          labeled by <strong>task</strong>, <strong>model</strong>, and
-          <strong>dominant failure category</strong> (e.g., pre-grasp/grasp,
-          release/placement, trajectory drift, instruction adherence). These
-          visual examples complement the quantitative results and taxonomy
-          reported in the paper.
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      a:hover {
+        color: var(--accent-strong);
+      }
+
+      img {
+        max-width: 100%;
+        border: 0;
+        display: block;
+      }
+
+      .page {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 32px 18px 60px;
+      }
+
+      header.hero {
+        background: linear-gradient(135deg, #ffffff, #eff3ff);
+        border-radius: calc(var(--radius) + 6px);
+        padding: 32px;
+        box-shadow: var(--shadow);
+        border: 1px solid #dde3fb;
+      }
+
+      .tagline {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        color: var(--muted);
+        margin: 0 0 8px;
+      }
+
+      h1 {
+        font-size: clamp(28px, 3vw, 40px);
+        line-height: 1.15;
+        margin: 0 0 16px;
+      }
+
+      .lead {
+        font-size: 16px;
+        color: #1f2333;
+        margin-bottom: 20px;
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border-radius: 999px;
+        font-weight: 600;
+        border: 1px solid transparent;
+        text-decoration: none;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid rgba(42, 93, 216, 0.4);
+        outline-offset: 4px;
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 12px 25px rgba(42, 93, 216, 0.35);
+      }
+
+      .btn.secondary {
+        border-color: rgba(19, 23, 34, 0.2);
+        color: var(--accent-strong);
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .hero-meta span {
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(16, 22, 40, 0.05);
+      }
+
+      main {
+        margin-top: 38px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      section {
+        background: var(--card);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        padding: 28px;
+        box-shadow: 0 12px 35px rgba(17, 23, 33, 0.06);
+      }
+
+      .section-title {
+        margin: 0 0 16px;
+        font-size: 20px;
+      }
+
+      p {
+        margin: 0 0 12px;
+        line-height: 1.6;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        border-radius: calc(var(--radius) - 6px);
+        padding: 18px;
+        background: #fdfdff;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .mini-list {
+        margin: 8px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 40px;
+      }
+
+      .section-note {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 12px;
+      }
+
+      .task-list {
+        margin: 12px 0 0;
+        padding-left: 20px;
+        line-height: 1.6;
+      }
+
+      .stat-block {
+        margin-top: 16px;
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: rgba(42, 93, 216, 0.08);
+        color: #0d1a3d;
+        font-weight: 600;
+      }
+
+      .taxonomy-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        margin-top: 18px;
+      }
+
+      .taxonomy-card {
+        border: 1px solid var(--border);
+        border-radius: calc(var(--radius) - 6px);
+        padding: 16px;
+      }
+
+      .taxonomy-card h4 {
+        margin: 0 0 8px;
+        font-size: 15px;
+      }
+
+      .stat-tag {
+        display: inline-flex;
+        margin-top: 8px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+      }
+
+      .note {
+        margin-top: 18px;
+        padding: 14px 16px;
+        background: rgba(16, 22, 40, 0.04);
+        border-radius: 14px;
+        font-size: 14px;
+        color: #343751;
+      }
+
+      .clip-grid {
+        margin-top: 22px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      figure.clip {
+        margin: 0;
+        border: 1px solid var(--border);
+        border-radius: calc(var(--radius) - 4px);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+      }
+
+      .clip-media {
+        position: relative;
+        background: #000;
+      }
+
+      .clip-media a {
+        display: block;
+      }
+
+      .clip-media img {
+        width: 100%;
+        height: auto;
+      }
+
+      figcaption {
+        padding: 16px 17px 20px;
+      }
+
+      .clip-label {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .failure-tag {
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(42, 93, 216, 0.12);
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+
+      .clip h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+
+      .clip-meta {
+        list-style: none;
+        margin: 12px 0 0;
+        padding: 0;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .clip-meta li + li {
+        margin-top: 4px;
+      }
+
+      footer {
+        margin-top: 40px;
+        padding: 24px 0;
+        font-size: 13px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        header.hero {
+          padding: 24px;
+        }
+
+        section {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="tagline">Artifact Supplement · SenSys ’26</p>
+        <h1>
+          Experiences from Benchmarking Vision–Language–Action Models for Robotic
+          Manipulation
+        </h1>
+        <p class="lead">
+          Cross-paradigm evaluation of ACT, OpenVLA–OFT, RDT-1B, and &pi;<sub
+            >0</sub
+          >
+          on four dual-arm household tasks plus a simulation suite. This page
+          distills the paper’s findings and provides the peer-review GIFs for
+          close inspection.
         </p>
-      </section>
-
-      <!-- Real-world section -->
-      <section id="real">
-        <h2>Real-World Failure Cases (ALOHA Mobile)</h2>
-        <p class="section-note">
-          Four household-inspired tasks under ID / Spatial OOD / Instance+Spatial OOD settings.
-        </p>
-
-        <div class="grid">
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/real/clean_dish_mis_grasp_release.gif"
-              alt="Clean Dish clip showing the sponge slipping away before it can be deposited in the pot."
-            />
-            <figcaption>
-              <div class="clip-title">Clean Dish – mis-grasp and premature release</div>
-              <div class="clip-meta">
-                Setting: Real robot · Task: Clean Dish · Failure: Pre-grasp + Release
-              </div>
-              <p class="clip-desc">
-                A slight offset causes the sponge to wobble in the gripper and fall
-                before the pot is reached, highlighting how compounding small pose
-                errors doom long-horizon interactions.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/real/accident_release_pot.gif"
-              alt="Put Sponge into Pot clip where the grasped sponge is dropped against the rim."
-            />
-            <figcaption>
-              <div class="clip-title">Put Sponge into Pot – accidental rim release</div>
-              <div class="clip-meta">
-                Setting: Real robot · Task: Put Sponge into Pot · Failure: Release / Placement
-              </div>
-              <p class="clip-desc">
-                The controller reaches the pot but opens slightly early, causing the
-                sponge to catch the rim and tumble out before landing inside.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/real/misgrasp_pot_1.gif"
-              alt="Put Sponge into Pot clip where the gripper repeatedly clips the pot wall."
-            />
-            <figcaption>
-              <div class="clip-title">Put Sponge into Pot – repeated wall collisions</div>
-              <div class="clip-meta">
-                Setting: Real robot · Task: Put Sponge into Pot · Failure: Trajectory drift
-              </div>
-              <p class="clip-desc">
-                Small pose drift accumulates until the end-effector drags along the
-                pot wall instead of approaching over the opening, preventing a clean
-                insertion.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/real/misgrasp_pot_2.gif"
-              alt="Put Sponge into Pot clip where the gripper closes on air next to the sponge."
-            />
-            <figcaption>
-              <div class="clip-title">Put Sponge into Pot – air grasp near the sponge</div>
-              <div class="clip-meta">
-                Setting: Real robot · Task: Put Sponge into Pot · Failure: Pre-grasp / Grasp
-              </div>
-              <p class="clip-desc">
-                The gripper follows the right macro motion but closes a few
-                centimeters away from the sponge, showcasing inconsistent contact
-                reasoning under occlusion.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/real/misgrasp_zipper.gif"
-              alt="Unzip Bag clip where the gripper closes on fabric instead of the zipper tab."
-            />
-            <figcaption>
-              <div class="clip-title">Unzip Bag – zipper tab miss</div>
-              <div class="clip-meta">
-                Setting: Real robot · Task: Unzip Bag · Failure: Fine-feature grasp
-              </div>
-              <p class="clip-desc">
-                Despite approaching the zipper head, the fingers pinch nearby fabric
-                and fail to latch onto the metal pull, so the zipper never actuates.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/real/fold_short_state_drift.gif"
-              alt="Folding Shorts clip where the cloth slowly drifts out of the camera view."
-            />
-            <figcaption>
-              <div class="clip-title">Fold Shorts – state drift mid-task</div>
-              <div class="clip-meta">
-                Setting: Real robot · Task: Fold Shorts · Failure: State tracking / Drift
-              </div>
-              <p class="clip-desc">
-                After the first fold, the cloth shifts relative to the gripper
-                reference, so the next motion misses the target edge and the garment
-                unfolds.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/real/misgrasp_fold_shorts.gif"
-              alt="Folding Shorts clip where the grasp scoops only a corner of the garment."
-            />
-            <figcaption>
-              <div class="clip-title">Fold Shorts – partial grasp on the hem</div>
-              <div class="clip-meta">
-                Setting: Real robot · Task: Fold Shorts · Failure: Pre-grasp / Grasp
-              </div>
-              <p class="clip-desc">
-                Only a small corner is captured, causing the cloth to twist and pull
-                away from the desired fold line when lifted.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/real/Instruction_adherence.gif"
-              alt="Clip where the robot picks the right object but ignores the spoken instruction."
-            />
-            <figcaption>
-              <div class="clip-title">Instruction adherence lapse</div>
-              <div class="clip-meta">
-                Setting: Real robot · Task: Language-guided manipulation · Failure: Instruction adherence
-              </div>
-              <p class="clip-desc">
-                The policy grounds the scene but executes a default clean-up motion
-                instead of the specified command, underscoring alignment gaps between
-                language and action.
-              </p>
-            </figcaption>
-          </figure>
+        <div class="hero-cta">
+          <a
+            class="btn primary"
+            href="experience_from_benchmarking_vision-language-action_models_for_robotic_manipulation.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            Download Paper (PDF)
+          </a>
+          <a class="btn secondary" href="#real">Skip to GIF Gallery</a>
         </div>
-      </section>
-
-      <!-- Simulation section -->
-      <section id="sim">
-        <h2>Simulation Failure Cases (Cube Manipulation)</h2>
-        <p class="section-note">
-          Simple pick-and-place and stacking tasks with colored cubes, evaluated under ID / OOD conditions.
-        </p>
-
-        <div class="grid">
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/sim/openvla_misgrap_red_cube.gif"
-              alt="Simulation clip where the gripper keeps closing beside the red cube."
-            />
-            <figcaption>
-              <div class="clip-title">Pick Red Cube – planar mis-grasp</div>
-              <div class="clip-meta">
-                Setting: Simulation · Task: Pick Red Cube · Failure: Pre-grasp / Grasp
-              </div>
-              <p class="clip-desc">
-                The wrist follows the right macro trajectory but never centers over
-                the cube, so every attempt ends with an air grasp just a few
-                millimeters away.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/sim/sim_push_instead_pick.gif"
-              alt="Simulation clip where the end-effector pushes the cube across the table."
-            />
-            <figcaption>
-              <div class="clip-title">Pick Blue Cube – push instead of pinch</div>
-              <div class="clip-meta">
-                Setting: Simulation · Task: Pick Blue Cube · Failure: Contact mode error
-              </div>
-              <p class="clip-desc">
-                The approach yaw is misaligned, so the gripper nudges the cube rather
-                than settling above it, pushing it farther away on every attempt.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="clip">
-            <img
-              loading="lazy"
-              src="gifs/sim/pi0_stack_blue_on_green.gif"
-              alt="Simulation clip where a blue cube slides off the green base during stacking."
-            />
-            <figcaption>
-              <div class="clip-title">Stack Blue on Green – release misalignment</div>
-              <div class="clip-meta">
-                Setting: Simulation · Task: Stack Blue on Green · Failure: Release / Placement
-              </div>
-              <p class="clip-desc">
-                The second cube is transported correctly but released with a slight
-                roll error, so it slides off the target stack and topples.
-              </p>
-            </figcaption>
-          </figure>
+        <div class="hero-meta">
+          <span>ALOHA Mobile · Bimanual</span>
+          <span>Tasks: Clean Dish · Put Sponge into Pot · Unzip Bag · Fold Shorts</span>
+          <span>Metrics: Success · Time to Success · Instruction Adherence</span>
         </div>
-      </section>
+      </header>
 
-      <!-- How to interpret / cite -->
-      <section id="usage">
-        <h2>Using and Citing This Artifact</h2>
-        <p class="small">
-          These GIFs are intended as qualitative complements to the figures and
-          tables in the main paper (real-world and simulation results, failure
-          taxonomy, and remedy discussion). If you reference this artifact,
-          please cite the paper:
-        </p>
-        <p class="small">
-          <em>
-            “How Aligned Are Vision–Language–Action Models in Robotics?
-            An Empirical Study in Real and Simulated Environments”, SenSys ’26.
-          </em>
-        </p>
-      </section>
-    </main>
+      <main>
+        <section id="overview">
+          <h2 class="section-title">Paper At A Glance</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Unified Benchmark</h3>
+              <p>
+                Side-by-side evaluation of a task-specific imitation policy (ACT)
+                and three generalist VLAs under identical protocols on the ALOHA
+                Mobile platform plus MuJoCo tabletop simulation.
+              </p>
+              <ul class="mini-list">
+                <li>100–200 demonstrations per task, teleoperated</li>
+                <li>In-distribution, spatial OOD, and instance+spatial OOD</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Failure Taxonomy</h3>
+              <p>
+                Structured labeling of 180 unsuccessful trials surfaces dominant
+                failure families (pre-grasp, release timing, trajectory drift,
+                instruction adherence) and model-level issues.
+              </p>
+              <ul class="mini-list">
+                <li>Task-level: 75% of failures</li>
+                <li>Model-level: 25%, mostly perception drift</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Empirical Insights</h3>
+              <p>
+                &pi;<sub>0</sub> offers the strongest OOD robustness, ACT excels
+                in-distribution stability, and doubling demonstrations aids
+                long-horizon, deformable tasks more than rigid-object ones.
+              </p>
+              <ul class="mini-list">
+                <li>Contact precision is the main bottleneck</li>
+                <li>Neuro-symbolic constraints improve failure diagnosis</li>
+              </ul>
+            </article>
+          </div>
+        </section>
 
-    <footer>
-      Hosted on GitHub Pages · This page is anonymized for peer review.
-    </footer>
-  </div>
-</body>
+        <section id="setup">
+          <h2 class="section-title">Benchmark Setup</h2>
+          <div class="split">
+            <article>
+              <h3>Manipulation Tasks</h3>
+              <ol class="task-list">
+                <li>
+                  <strong>Clean Dish.</strong> Dual-arm wiping of a plate with a
+                  sponge; tests force modulation and instruction grounding.
+                </li>
+                <li>
+                  <strong>Put Sponge into Pot.</strong> Grasp target object,
+                  remove lid, and place into receptacle; stresses object ID and
+                  precise releases.
+                </li>
+                <li>
+                  <strong>Unzip Bag.</strong> Hold bag taut, pinch zipper tab,
+                  and execute a straight pull on a deformable object.
+                </li>
+                <li>
+                  <strong>Fold Shorts.</strong> Two sequential folds on cloth
+                  requiring re-grasps without introducing drift.
+                </li>
+              </ol>
+            </article>
+            <article>
+              <h3>Evaluation Axes</h3>
+              <ul class="mini-list">
+                <li>Task success rate, Wilson 95% CI</li>
+                <li>Time-to-success on successful trials</li>
+                <li>
+                  Instruction adherence accuracy for object selection and
+                  relational cues
+                </li>
+              </ul>
+              <div class="stat-block">
+                180 annotated failure cases · 25 Hz control budget · RTX5090 /
+                dual A6000 training runs
+              </div>
+            </article>
+          </div>
+          <p class="section-note">
+            Simulation complements the hardware trials with controlled color-cube
+            pick/place tasks in MuJoCo to stress-test language grounding under
+            randomized layouts.
+          </p>
+        </section>
+
+        <section id="taxonomy">
+          <h2 class="section-title">Failure Taxonomy & Remedies</h2>
+          <p>
+            Failures are grouped into task-level execution slips and deeper
+            model-level deficiencies. The GIFs below are tagged with the relevant
+            categories so reviewers can connect visual evidence with the paper’s
+            taxonomy tables (Sec. 7).
+          </p>
+          <div class="taxonomy-grid">
+            <article class="taxonomy-card">
+              <h4>Pre-grasp / Grasp</h4>
+              <p>
+                Centimeter-scale pose errors or missing wrist-roll correction
+                yield air grasps, slippage, or pushing instead of pinching.
+              </p>
+              <span class="stat-tag">32% of failures</span>
+            </article>
+            <article class="taxonomy-card">
+              <h4>Release / Placement</h4>
+              <p>
+                Premature openings or misaligned receptacle frames cause dropped
+                or skewed placements despite correct approach.
+              </p>
+              <span class="stat-tag">18% of failures</span>
+            </article>
+            <article class="taxonomy-card">
+              <h4>Trajectory / State Drift</h4>
+              <p>
+                Long-horizon cloth tasks accumulate pose error when visual
+                feedback is partially occluded.
+              </p>
+              <span class="stat-tag">15% of failures</span>
+            </article>
+            <article class="taxonomy-card">
+              <h4>Instruction Adherence</h4>
+              <p>
+                Object-level grounding mistakes lead to the wrong item being
+                manipulated despite fluent motions.
+              </p>
+              <span class="stat-tag">10% of failures</span>
+            </article>
+            <article class="taxonomy-card">
+              <h4>Perception Misalignment</h4>
+              <p>
+                Latent depth/pose errors propagate into action heads, often under
+                occlusion or lighting shifts.
+              </p>
+              <span class="stat-tag">9% of failures</span>
+            </article>
+            <article class="taxonomy-card">
+              <h4>Temporal Inconsistency</h4>
+              <p>
+                Policy output timing desynchronizes from robot execution, causing
+                oscillations or late releases.
+              </p>
+              <span class="stat-tag">6% of failures</span>
+            </article>
+          </div>
+          <div class="note">
+            Remedy themes: add micro-alignment waypoints before closure, verify
+            receptacle contact frames before releasing, add subgoal resets for
+            deformable-object folds, and diversify language phrasing plus
+            contrastive negatives to tighten semantic grounding.
+          </div>
+        </section>
+
+        <section id="real">
+          <h2 class="section-title">Real-World Failure Case GIFs</h2>
+          <p>
+            Captured on the ALOHA Mobile platform with synchronized logs described
+            in the paper. Each GIF links to the source file for full-resolution
+            inspection.
+          </p>
+          <div class="clip-grid">
+            <figure class="clip">
+              <div class="clip-media">
+                <a href="gifs/real/accident_release_pot.gif" target="_blank" rel="noopener">
+                  <img
+                    src="gifs/real/accident_release_pot.gif"
+                    alt="Put Sponge into Pot trial where the sponge falls while being released above the pot."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Put Sponge into Pot</span>
+                  <span class="failure-tag">Release / Placement</span>
+                </div>
+                <h3>Release slip as the sponge clears the pot rim</h3>
+                <p>
+                  After the lid arm stabilizes the pot, the depositing gripper opens
+                  mid-air, letting the sponge ricochet off the rim instead of
+                  landing inside.
+                </p>
+                <ul class="clip-meta">
+                  <li>Setting: Real robot · instruction “Place the sponge in the pot.”</li>
+                  <li>Failure driver: Missing receptacle-frame validation before release</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a
+                  href="gifs/real/clean_dish_mis_grasp_release.gif"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="gifs/real/clean_dish_mis_grasp_release.gif"
+                    alt="Clean Dish trial with a near-miss sponge grasp that causes an early drop."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Clean Dish</span>
+                  <span class="failure-tag">Pre-grasp / Grasp</span>
+                </div>
+                <h3>Hand-off collapses after a marginal sponge grasp</h3>
+                <p>
+                  The wiping arm contacts the sponge on its edge rather than the
+                  center, so the tool slides away before the wiping motion finishes.
+                </p>
+                <ul class="clip-meta">
+                  <li>Setting: Real robot · dual-arm wiping</li>
+                  <li>Failure driver: Insufficient wrist-roll correction before closure</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a
+                  href="gifs/real/fold_short_state_drift.gif"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="gifs/real/fold_short_state_drift.gif"
+                    alt="Folding Shorts attempt where cloth drifts off target alignment over time."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Fold Shorts</span>
+                  <span class="failure-tag">Trajectory / State Drift</span>
+                </div>
+                <h3>Second fold diverges after occluded contact</h3>
+                <p>
+                  The model completes the first fold but drifts while reaching for the
+                  waistband, causing the garment to twist and slide out of frame.
+                </p>
+                <ul class="clip-meta">
+                  <li>Failure driver: Limited visual feedback once fabric self-occludes</li>
+                  <li>Remedy: Subgoal reset and overlap in chunked actions</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a href="gifs/real/Instruction_adherence.gif" target="_blank" rel="noopener">
+                  <img
+                    src="gifs/real/Instruction_adherence.gif"
+                    alt="Instruction-following failure where the wrong household object is grasped."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Instruction Grounding</span>
+                  <span class="failure-tag">Instruction Adherence</span>
+                </div>
+                <h3>Wrong object selected despite fluent motion</h3>
+                <p>
+                  The policy confidently grasps the distractor object next to the pot
+                  even though the command specifies the sponge, revealing a grounding
+                  gap rather than a control issue.
+                </p>
+                <ul class="clip-meta">
+                  <li>Failure driver: Limited contrastive language coverage</li>
+                  <li>Remedy: Add referring-expression variants and negatives</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a href="gifs/real/misgrasp_fold_shorts.gif" target="_blank" rel="noopener">
+                  <img
+                    src="gifs/real/misgrasp_fold_shorts.gif"
+                    alt="Fold Shorts attempt where the waistband edge is missed."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Fold Shorts</span>
+                  <span class="failure-tag">Pre-grasp / Grasp</span>
+                </div>
+                <h3>Waistband pinch lands beside the target edge</h3>
+                <p>
+                  The gripper closes a centimeter past the waistband seam, dragging
+                  the garment sideways and preventing the second fold.
+                </p>
+                <ul class="clip-meta">
+                  <li>Failure driver: Coarse spatial prior under varied fabric colors</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a href="gifs/real/misgrasp_pot_1.gif" target="_blank" rel="noopener">
+                  <img
+                    src="gifs/real/misgrasp_pot_1.gif"
+                    alt="Put Sponge into Pot attempt where the gripper pinches open air."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Put Sponge into Pot</span>
+                  <span class="failure-tag">Pre-grasp / Grasp</span>
+                </div>
+                <h3>Planar misalignment yields an air grasp</h3>
+                <p>
+                  The grasp pose hovers beside the sponge, brushing it sideways but
+                  never establishing control, which cascades into a missed placement.
+                </p>
+                <ul class="clip-meta">
+                  <li>Failure driver: Lack of micro-alignment before closure</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a href="gifs/real/misgrasp_pot_2.gif" target="_blank" rel="noopener">
+                  <img
+                    src="gifs/real/misgrasp_pot_2.gif"
+                    alt="Put Sponge into Pot attempt with wrist yaw error that pushes the sponge."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Put Sponge into Pot</span>
+                  <span class="failure-tag">Pre-grasp / Grasp</span>
+                </div>
+                <h3>Yaw error pushes the target instead of pinching</h3>
+                <p>
+                  A few degrees of wrist yaw cause tangential contact, rolling the
+                  sponge away and forcing a recovery that never re-centers.
+                </p>
+                <ul class="clip-meta">
+                  <li>Failure driver: Wrist-roll normalization missing</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a href="gifs/real/misgrasp_zipper.gif" target="_blank" rel="noopener">
+                  <img
+                    src="gifs/real/misgrasp_zipper.gif"
+                    alt="Unzip Bag trial where the zipper tab slips out mid-pull."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Unzip Bag</span>
+                  <span class="failure-tag">Pre-grasp / Grasp</span>
+                </div>
+                <h3>Zipper tab slips before the pull completes</h3>
+                <p>
+                  Holding tension with the left arm works, but the right arm pinches
+                  the fabric instead of the tab, leading to a partial zip and cloth
+                  distortion.
+                </p>
+                <ul class="clip-meta">
+                  <li>Failure driver: Tiny-feature grasping precision limit</li>
+                  <li>Remedy: tactile gating or staged micro-waypoints</li>
+                </ul>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="simulation">
+          <h2 class="section-title">Simulation Case Studies (MuJoCo Cubes)</h2>
+          <p>
+            Zero-shot testing on the MuJoCo tabletop environment isolates spatial
+            reasoning and language grounding without hardware noise. Tasks span
+            color-conditioned picks and stack moves with randomized cube layouts.
+          </p>
+          <div class="clip-grid">
+            <figure class="clip">
+              <div class="clip-media">
+                <a
+                  href="gifs/sim/openvla_misgrap_red_cube.gif"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="gifs/sim/openvla_misgrap_red_cube.gif"
+                    alt="Simulation pick up red cube attempt that closes beside the goal."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Pick Red Cube</span>
+                  <span class="failure-tag">Pre-grasp / Grasp</span>
+                </div>
+                <h3>Planar mis-grasp after following the right color cue</h3>
+                <p>
+                  OpenVLA–OFT aligns semantically with the instruction but closes a
+                  few centimeters short, repeatedly grazing the cube without a secure
+                  pinch.
+                </p>
+                <ul class="clip-meta">
+                  <li>Setting: Simulation · ID layout</li>
+                  <li>Failure driver: Contact-level precision</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a href="gifs/sim/sim_push_instead_pick.gif" target="_blank" rel="noopener">
+                  <img
+                    src="gifs/sim/sim_push_instead_pick.gif"
+                    alt="Simulation attempt where the cube is pushed instead of pinched."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Pick Blue Cube</span>
+                  <span class="failure-tag">Pre-grasp / Grasp</span>
+                </div>
+                <h3>Yaw/pitch error converts the grasp into a push</h3>
+                <p>
+                  A small orientation offset makes the gripper sweep along the cube
+                  face, knocking it away while the policy keeps trying to close.
+                </p>
+                <ul class="clip-meta">
+                  <li>Setting: Simulation · randomized layout</li>
+                  <li>Failure driver: Wrist-roll and pitch correction</li>
+                </ul>
+              </figcaption>
+            </figure>
+            <figure class="clip">
+              <div class="clip-media">
+                <a
+                  href="gifs/sim/pi0_stack_blue_on_green.gif"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="gifs/sim/pi0_stack_blue_on_green.gif"
+                    alt="Simulation stack blue on green attempt where the cube slips while releasing."
+                  />
+                </a>
+              </div>
+              <figcaption>
+                <div class="clip-label">
+                  <span>Stack Blue on Green</span>
+                  <span class="failure-tag">Release / Placement</span>
+                </div>
+                <h3>Stack destabilizes at the release phase</h3>
+                <p>
+                  &pi;<sub>0</sub> reaches the correct pose but opens before the cube
+                  is fully centered, causing the top block to slide off after contact.
+                </p>
+                <ul class="clip-meta">
+                  <li>Setting: Simulation · OOD layout</li>
+                  <li>Failure driver: Missing hold-for-stability delay</li>
+                </ul>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="usage">
+          <h2 class="section-title">Using & Citing This Artifact</h2>
+          <p>
+            These qualitative clips complement the quantitative tables in the paper
+            (real-world and simulation success rates, failure taxonomy statistics,
+            and remedy discussion). When referencing this page, please cite:
+          </p>
+          <p>
+            <em>
+              “Experiences from Benchmarking Vision–Language–Action Models for
+              Robotic Manipulation,” Proceedings of SenSys ’26.
+            </em>
+          </p>
+          <p class="section-note">
+            Contact details are intentionally omitted to preserve double-blind
+            review. The PDF linked above contains full methodology, metrics, and
+            additional context.
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        Hosted on GitHub Pages · Artifact anonymized for peer review · Last
+        updated automatically from repository assets.
+      </footer>
+    </div>
+  </body>
 </html>
